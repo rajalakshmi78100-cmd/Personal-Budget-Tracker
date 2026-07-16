@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal finance reports dashboard">
+  <title>Reports | Finora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <!-- Main navigation -->
+  <header class="site-header">
+    <a class="brand" href="dashboard.html" aria-label="Finora home"><span class="brand-mark">F</span>Finora</a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="dashboard.html">Dashboard</a><a href="expenses.html">Expenses</a><a class="active" href="reports.html">Reports</a><a href="settings.html">Settings</a>
+    </nav>
+    <div class="header-actions"><button class="icon-button" aria-label="Notifications">♢<span class="notification-dot"></span></button><button class="profile" aria-label="Open profile"><span>AS</span><i>⌄</i></button></div>
+  </header>
+
+  <main class="page-shell">
+    <!-- Page intro -->
+    <section class="page-intro"><div><p class="eyebrow">Analytics overview</p><h1>Financial Reports</h1><p>Turn your financial data into clear, actionable insights for smarter decisions.</p></div><button class="btn btn-primary">＋ Generate report</button></section>
+
+    <!-- Financial summary -->
+    <section class="stat-grid" aria-label="Financial summary">
+      <article class="stat-card"><div class="stat-icon blue">↘</div><p>Total Expenses</p><h2>$12,480.00</h2><span class="trend down">↓ 8.4% <em>vs last month</em></span></article>
+      <article class="stat-card"><div class="stat-icon green">↗</div><p>Total Income</p><h2>$18,750.00</h2><span class="trend up">↑ 12.5% <em>vs last month</em></span></article>
+      <article class="stat-card"><div class="stat-icon violet">◈</div><p>Savings</p><h2>$6,270.00</h2><span class="trend up">↑ 18.2% <em>vs last month</em></span></article>
+      <article class="stat-card"><div class="stat-icon orange">⌁</div><p>Monthly Growth</p><h2>14.8%</h2><span class="trend up">↑ 2.1% <em>vs last month</em></span></article>
+    </section>
+
+    <!-- CSS chart placeholders -->
+    <section class="chart-grid">
+      <article class="panel trend-chart"><div class="panel-heading"><div><h2>Monthly Expense Trend</h2><p>Spending over the last 6 months</p></div><button class="select-button">Last 6 months⌄</button></div><div class="chart-total"><strong>$12,480</strong><span class="trend down">↓ 8.4%</span></div><div class="line-chart" aria-label="Expense chart from January to June"><div class="grid-lines"></div><svg viewBox="0 0 620 210" preserveAspectRatio="none" role="img" aria-label="Expenses chart"><defs><linearGradient id="fill-blue" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2563eb" stop-opacity=".23"/><stop offset="100%" stop-color="#2563eb" stop-opacity="0"/></linearGradient></defs><path d="M0,162 C45,139 66,151 105,114 S162,99 204,126 S273,94 310,105 S365,66 412,83 S468,77 516,40 S570,68 620,23 L620,210 L0,210 Z" fill="url(#fill-blue)"/><path d="M0,162 C45,139 66,151 105,114 S162,99 204,126 S273,94 310,105 S365,66 412,83 S468,77 516,40 S570,68 620,23" fill="none" stroke="#2563eb" stroke-width="4" vector-effect="non-scaling-stroke"/></svg><div class="chart-labels"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div></div></article>
+      <article class="panel category-chart"><div class="panel-heading"><div><h2>Expense Categories</h2><p>Distribution this month</p></div><button class="more-button" aria-label="More options">•••</button></div><div class="donut-wrap"><div class="donut"><div><strong>$2,450</strong><span>Total spent</span></div></div><ul class="legend"><li><i class="dot food"></i><span>Food & Dining</span><b>32%</b></li><li><i class="dot transport"></i><span>Transport</span><b>24%</b></li><li><i class="dot shopping"></i><span>Shopping</span><b>19%</b></li><li><i class="dot bills"></i><span>Bills & Utilities</span><b>25%</b></li></ul></div></article>
+    </section>
+
+    <section class="panel comparison"><div class="panel-heading"><div><h2>Income vs Expenses</h2><p>Compare your monthly cash flow</p></div><div class="chart-key"><span><i></i> Income</span><span><i></i> Expenses</span></div></div><div class="bar-chart" aria-label="Monthly income and expense comparison"><div class="bar-group"><div class="bars"><i style="height:65%"></i><i style="height:42%"></i></div><span>Jan</span></div><div class="bar-group"><div class="bars"><i style="height:78%"></i><i style="height:48%"></i></div><span>Feb</span></div><div class="bar-group"><div class="bars"><i style="height:55%"></i><i style="height:66%"></i></div><span>Mar</span></div><div class="bar-group"><div class="bars"><i style="height:84%"></i><i style="height:50%"></i></div><span>Apr</span></div><div class="bar-group"><div class="bars"><i style="height:72%"></i><i style="height:40%"></i></div><span>May</span></div><div class="bar-group"><div class="bars"><i style="height:92%"></i><i style="height:54%"></i></div><span>Jun</span></div></div></section>
+
+    <section class="content-grid reports-lower">
+      <!-- Recent reports table -->
+      <article class="panel table-panel"><div class="panel-heading"><div><h2>Recent Reports</h2><p>Your latest generated reports</p></div><a class="text-link" href="#reports">View all →</a></div><div class="table-scroll"><table><thead><tr><th>Report Name</th><th>Date</th><th>Type</th><th>Status</th><th></th></tr></thead><tbody><tr><td><span class="file-icon">▤</span>Monthly Summary — June</td><td>Jun 30, 2024</td><td>Monthly</td><td><span class="badge success">Completed</span></td><td><button class="row-action">Download</button></td></tr><tr><td><span class="file-icon">▤</span>Expense Analysis — Q2</td><td>Jun 28, 2024</td><td>Quarterly</td><td><span class="badge pending">Pending</span></td><td><button class="row-action">View</button></td></tr><tr><td><span class="file-icon">▤</span>Tax Summary 2024</td><td>Jun 21, 2024</td><td>Annual</td><td><span class="badge processing">Processing</span></td><td><button class="row-action">View</button></td></tr></tbody></table></div></article>
+      <!-- Activity timeline -->
+      <article class="panel timeline-panel"><div class="panel-heading"><div><h2>Recent Activity</h2><p>What happened lately</p></div></div><ol class="timeline"><li><i class="timeline-icon blue">▤</i><div><b>Generated monthly report</b><span>June financial summary</span></div><time>2h ago</time></li><li><i class="timeline-icon red">↓</i><div><b>Exported PDF</b><span>Q2 expense analysis</span></div><time>Yesterday</time></li><li><i class="timeline-icon orange">＋</i><div><b>Added an expense</b><span>Office supplies · $86.40</span></div><time>2d ago</time></li><li><i class="timeline-icon violet">◈</i><div><b>Updated budget</b><span>Food & dining category</span></div><time>4d ago</time></li></ol></article>
+    </section>
+
+    <!-- Report actions -->
+    <section class="quick-actions"><div><p class="eyebrow">Shortcuts</p><h2>Quick Actions</h2><p>Generate or export your financial data in a few clicks.</p></div><div class="action-buttons"><button class="btn btn-primary">▤ Generate Report</button><button class="btn btn-light">↓ Export PDF</button><button class="btn btn-light">⇩ Export Excel</button><button class="btn btn-light">⎙ Print Report</button></div></section>
+  </main>
+  <footer>© 2024 Finora. Built for better financial habits.</footer>
 </body>
 </html>
