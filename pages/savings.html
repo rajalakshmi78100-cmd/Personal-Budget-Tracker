@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+    <title>Savings</title>
+
+    <link href="../src/output.css" rel="stylesheet">
 </head>
+
 <body>
-    
-</body>
+
+    <body class="bg-gray-100">
+
+        <div class="max-w-4xl mx-auto p-8">
+
+            <h1 class="text-3xl font-bold mb-6">Savings Tracker</h1>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+
+                <form id="savingForm">
+
+                    <label class="block mb-2 font-semibold">Saving Name</label>
+                    <input type="text" id="savingName" class="w-full border p-3 rounded mb-4"
+                        placeholder="Emergency Fund" required>
+
+                    <label class="block mb-2 font-semibold">Target Amount</label>
+                    <input type="number" id="targetAmount" class="w-full border p-3 rounded mb-4" required>
+
+                    <label class="block mb-2 font-semibold">Saved Amount</label>
+                    <input type="number" id="savedAmount" class="w-full border p-3 rounded mb-4" required>
+
+                    <button class="bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700">
+                        Add Saving
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div id="savingList" class="mt-8 space-y-4"></div>
+
+        </div>
+
+        <script src="../js/savings.js"></script>
+
+    </body>
+
 </html>
