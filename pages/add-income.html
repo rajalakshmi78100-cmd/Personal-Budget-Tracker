@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+    <title>Add Income</title>
+    <link href="../src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 <body>
+
     
-</body>
+
+        <div class="container">
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h2>💰 Budget Tracker</h2>
+
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="add-expense.html">Add Expense</a></li>
+                    <li class="active"><a href="add-income.html">Add Income</a></li>
+                    <li><a href="transactions.html">Transactions</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="goals.html">Goals</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="main">
+
+                <h1>Add Income</h1>
+
+                <div class="income-container">
+
+                    <div class="income-form">
+
+                        <form id="incomeForm">
+
+                            <label>Amount</label>
+                            <input type="number" id="amount" placeholder="Enter Amount" required>
+
+                            <label>Income Source</label>
+
+                            <select id="source">
+                                <option>Salary</option>
+                                <option>Freelance</option>
+                                <option>Business</option>
+                                <option>Investment</option>
+                                <option>Interest</option>
+                                <option>Rental Income</option>
+                                <option>Others</option>
+                            </select>
+
+                            <label>Date</label>
+
+                            <input type="date" id="date">
+
+                            <label>Payment Method</label>
+
+                            <select id="payment">
+
+                                <option>Cash</option>
+                                <option>UPI</option>
+                                <option>Bank Transfer</option>
+                                <option>Credit Card</option>
+
+                            </select>
+
+                            <label>Description</label>
+
+                            <input type="text" id="description" placeholder="Enter Description" required>
+
+                            <label>Notes</label>
+
+                            <textarea id="notes" rows="4" placeholder="Additional Notes"></textarea>
+
+                            <button type="submit">
+                                <i class="fa-solid fa-plus"></i>
+                                Add Income
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <!-- Right Side -->
+
+                    <div class="income-side">
+
+                        <h3>Income Sources</h3>
+
+                        <div class="card">💼 Salary</div>
+                        <div class="card">💻 Freelance</div>
+                        <div class="card">🏢 Business</div>
+                        <div class="card">📈 Investment</div>
+                        <div class="card">💸 Interest</div>
+                        <div class="card">🏠 Rental Income</div>
+                        <div class="card">📦 Others</div>
+
+                        <div class="tip">
+                            <h3>Tip</h3>
+
+                            <p>
+                                Record your income regularly to track cash flow and manage
+                                your finances better.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="../js/income.js"></script>
+
+    </body>
+
 </html>
