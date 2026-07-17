@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Categories — Budget Ledger</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+<div class="app-shell">
+  <!-- ============ MOBILE TOPBAR (hamburger toggle) ============ -->
+  <div class="mobile-topbar">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+    </button>
+    <div class="brand-mark">Budget Tracker</div>
+  </div>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+ 
+ 
+  <!-- ============ SIDEBAR (shared nav across all members' pages) ============ -->
+    <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="3"></rect><path d="M2 10h20"></path><circle cx="17" cy="15" r="1.4" fill="currentColor" stroke="none"></circle></svg>
+      </div>
+      <div class="brand-mark">Budget<br/>Tracker</div>
+    </div>
+ 
+    <ul class="nav-list">
+      <li><a href="dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+        Dashboard
+      </a></li>
+      <li><a href="add-expense.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8"></path></svg>
+        Add Expense
+      </a></li>
+      <li><a href="add-income.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
+        Add Income
+      </a></li>
+      <li><a href="Transactions.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"></path><path d="M9 9h6M9 13h6M9 17h4"></path></svg>
+        Transactions
+      </a></li>
+      <li><a href="reports.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><rect x="7" y="12" width="3" height="6"></rect><rect x="12" y="8" width="3" height="10"></rect><rect x="17" y="5" width="3" height="13"></rect></svg>
+        Reports
+      </a></li>
+      <li><a href="Categories.html" class="active">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5-9 5-9-5 9-5z"></path><path d="M3 12l9 5 9-5"></path><path d="M3 17l9 5 9-5"></path></svg>
+        Categories
+      </a></li>
+      <li><a href="savings.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-3 3-6 8-6 3 0 4 1 5 1 1 0 2-1 2-1s1 3-1 4c1 1 1 3 1 3v3a2 2 0 0 1-2 2h-1v2h-3v-2H9v2H6v-3c-2-1-2-3-2-5z"></path><circle cx="16" cy="9" r="0.8" fill="currentColor" stroke="none"></circle></svg>
+        Savings
+      </a></li>
+      <li><a href="settings.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path></svg>
+        Settings
+      </a></li>
+      <li><a href="about.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 16v-5"></path><circle cx="12" cy="8" r="0.8" fill="currentColor" stroke="none"></circle></svg>
+        About
+      </a></li>
+    </ul>
+  </aside>
+ 
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>Categories</h1>
+        <p>Set up the labels your income and expenses fall under, and an optional monthly limit for each.</p>
+      </div>
+      
+    </div>
+ 
+    <section class="card">
+      <h2 id="category-submit-label">Add a category</h2>
+      <p class="card-sub">Pick a type, name it, and set a monthly limit for expense categories if you'd like one.</p>
+ 
+      <form id="category-form">
+        <div class="field" style="margin-bottom: 14px;">
+          <label>Type</label>
+          <div class="type-toggle" id="category-type-toggle">
+            <button type="button" data-type="income" class="">Income</button>
+            <button type="button" data-type="expense" class="selected">Expense</button>
+          </div>
+        </div>
+ 
+        <div class="form-grid">
+          <div class="field">
+            <label for="category-name">Category name</label>
+            <input type="text" id="category-name" placeholder="e.g. Groceries" required />
+          </div>
+          <div class="field">
+            <label for="category-limit">Monthly limit (optional)</label>
+            <input type="number" id="category-limit" placeholder="e.g. 5000" min="0" step="1" />
+          </div>
+          <div class="field">
+            <button type="submit" class="btn" id="category-submit">Add category</button>
+          </div>
+        </div>
+ 
+        <div class="form-error" id="category-error"></div>
+      </form>
+    </section>
+ 
+    <section class="card">
+      <h2>Your categories</h2>
+      <p class="card-sub">Expense categories show how much of their limit has been spent so far.</p>
+ 
+      <div class="category-grid" id="category-grid"></div>
+      <div class="empty-state" id="category-empty" style="display:none;">
+        No categories yet — add your first one above.
+      </div>
+    </section>
+  </main>
+</div>
+ 
+<script src="categories.js"></script>
 </body>
-</html>
+</html
