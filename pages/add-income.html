@@ -172,63 +172,46 @@
 
             <!-- Header -->
 
-            <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center justify-between mb-6">
 
+                <!-- Left side: Dashboard title -->
                 <div>
-
-                    <h1 class="text-4xl font-bold">
-
-                        Add Income
-
+                    <h1 class="text-3xl font-bold">
+                        Dashboard
                     </h1>
-
-                    <div class="flex items-center gap-2 mt-2 text-gray-500">
-
-                        <span class="text-purple-600 font-medium">
-
-                            Dashboard
-
-                        </span>
-
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-
-                        <span>
-
-                            Add Income
-
-                        </span>
-
-                    </div>
-
+                    <p class="text-gray-500">
+                        Track your money overview
+                    </p>
                 </div>
 
+
+                <!-- Right side: Month dropdown + Notification + Profile -->
                 <div class="flex items-center gap-5">
 
-                    <button class="border rounded-xl px-6 py-3 bg-white shadow-sm">
+                    <select class="border border-gray-300 rounded-2xl px-5 py-3 bg-white shadow-sm font-medium">
+                        <option>This Month</option>
+                        <option>Last Month</option>
+                        <option>This Year</option>
+                    </select>
 
-                        <i class="fa-regular fa-calendar mr-2"></i>
 
-                        May 2025
+                    <button class="relative w-14 h-14 bg-white rounded-full shadow-md 
+        flex items-center justify-center">
+
+                        <i class="fa-solid fa-bell text-gray-600 text-xl"></i>
+
+                        <span class="absolute top-2 right-2 
+            w-3 h-3 bg-red-500 rounded-full border-2 border-white">
+                        </span>
 
                     </button>
 
-                    <div class="relative">
 
-                        <i class="fa-regular fa-bell text-2xl"></i>
+                    <div class="w-14 h-14 rounded-full bg-purple-600 
+        flex items-center justify-center 
+        text-white text-xl font-semibold">
 
-                        <span
-                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-
-                            3
-
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-semibold text-lg">
-
-                        R
+                        S
 
                     </div>
 
@@ -304,9 +287,9 @@
                                     class="w-full border rounded-xl px-4 py-4 focus:ring-2 focus:ring-green-500">
 
                                     <option>Salary</option>
-                                    <option>Freelance</option>
+                                    <option>Free Lancer</option>
                                     <option>Business</option>
-                                    <option>Investment</option>
+                                    <option>Investments</option>
                                     <option>Interest</option>
                                     <option>Rental Income</option>
                                     <option>Others</option>
@@ -314,7 +297,6 @@
                                 </select>
 
                             </div>
-
                             <!-- Date + Payment -->
 
                             <div class="grid md:grid-cols-2 gap-6">
@@ -473,7 +455,7 @@
 
                             <!-- Business -->
 
-                           <label onclick="selectIncome(this)"
+                            <label onclick="selectIncome(this)"
                                 class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
 
                                 <div class="flex items-center gap-4">
@@ -499,7 +481,7 @@
 
                             <!-- Investment -->
 
-                           <label onclick="selectIncome(this)"
+                            <label onclick="selectIncome(this)"
                                 class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
 
                                 <div class="flex items-center gap-4">
@@ -576,8 +558,8 @@
 
                             <!-- Others -->
 
-                            <label
-                                class="flex items-center justify-between rounded-2xl p-4 hover:bg-gray-50 cursor-pointer">
+                            <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between rounded-2xl p-4 hover:bg-gray-50 cursor-pointer">
 
                                 <div class="flex items-center gap-4">
 
@@ -589,9 +571,7 @@
                                     </div>
 
                                     <span class="font-medium text-lg">
-
                                         Others
-
                                     </span>
 
                                 </div>
@@ -599,42 +579,38 @@
                                 <input type="radio" name="incomeType">
 
                             </label>
+                            <!-- Tip Card -->
 
-                        </div>
+                            <div class="bg-green-50 rounded-3xl border p-6">
 
-                    </div>
+                                <div class="flex justify-between items-center">
 
-                    <!-- Tip Card -->
+                                    <div>
 
-                    <div class="bg-green-50 rounded-3xl border p-6">
+                                        <h3 class="text-2xl font-semibold text-green-700">
 
-                        <div class="flex justify-between items-center">
+                                            💡 Tip
 
-                            <div>
+                                        </h3>
 
-                                <h3 class="text-2xl font-semibold text-green-700">
+                                        <p class="text-gray-600 leading-8 mt-4">
 
-                                    💡 Tip
+                                            Record your income regularly to track your cash flow and plan your expenses
+                                            better.
 
-                                </h3>
+                                        </p>
 
-                                <p class="text-gray-600 leading-8 mt-4">
+                                    </div>
 
-                                    Record your income regularly to track your cash flow and plan your expenses better.
+                                    <i class="fa-solid fa-wallet text-7xl text-green-300"></i>
 
-                                </p>
+                                </div>
 
                             </div>
 
-                            <i class="fa-solid fa-wallet text-7xl text-green-300"></i>
-
                         </div>
 
                     </div>
-
-                </div>
-
-            </div>
 
         </main>
 
