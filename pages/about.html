@@ -1,12 +1,811 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+
+    <title>About - Budget Tracker</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../src/output.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f6f7fb;
+        }
+    </style>
+
 </head>
+
 <body>
-    
+
+<div class="flex min-h-screen">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="fixed left-0 top-0 w-64 h-screen bg-white shadow-lg flex flex-col justify-between">
+
+        <!-- Top -->
+
+        <div>
+
+            <!-- Logo -->
+
+            <div class="flex items-center gap-4 px-6 py-6">
+
+                <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-white text-xl">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="font-bold text-lg">
+                        Budget
+                    </h1>
+
+                    <h1 class="font-bold text-lg">
+                        Tracker
+                    </h1>
+
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+
+            <nav class="mt-5 space-y-2">
+
+                <a href="dashboard.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+
+                </a>
+
+                <a href="add-expense.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-circle-minus"></i>
+                    Add Expense
+
+                </a>
+
+                <a href="add-income.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-square-plus"></i>
+                    Add Income
+
+                </a>
+
+                <a href="transaction.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-file-lines"></i>
+                    Transactions
+
+                </a>
+
+                <a href="reports.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-chart-column"></i>
+                    Reports
+
+                </a>
+
+                <a href="categories.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-layer-group"></i>
+                    Categories
+
+                </a>
+
+                <a href="savings.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-piggy-bank"></i>
+                    Savings
+
+                </a>
+
+                <a href="settings.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+
+                </a>
+
+                <a href="about.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                    <i class="fa-solid fa-circle-info"></i>
+                    About
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <!-- Bottom Card -->
+
+        <div class="m-5 bg-purple-50 rounded-3xl p-6">
+
+            <div class="flex justify-center">
+
+                <div
+                    class="w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center text-white text-3xl">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+            </div>
+
+            <h2 class="font-semibold text-center mt-5">
+
+                Your data is safe
+
+            </h2>
+
+            <p class="text-center text-gray-500 text-sm mt-3 leading-6">
+
+                We value your privacy and keep your financial data secure.
+
+            </p>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="ml-64 flex-1 p-8">
+
+        <!-- ================= Header ================= -->
+
+        <div class="flex justify-between items-center">
+
+            <!-- Left -->
+
+            <div>
+
+                <h1 class="text-3xl font-bold">
+                    About
+                </h1>
+
+                <p class="text-gray-500 mt-1">
+                    Learn more about Budget Tracker
+                </p>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-5">
+
+                <!-- Month -->
+
+                <select
+                    class="border border-gray-300 rounded-xl px-4 py-2 bg-white outline-none focus:ring-2 focus:ring-purple-500">
+
+                    <option>This Month</option>
+                    <option>Last Month</option>
+                    <option>This Year</option>
+
+                </select>
+
+                <!-- Notification -->
+
+                <button class="relative w-11 h-11 rounded-full bg-white shadow flex items-center justify-center">
+
+                    <i class="fa-solid fa-bell text-gray-600"></i>
+
+                    <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500"></span>
+
+                </button>
+
+                <!-- Profile -->
+
+                <div id="profileAvatar"
+                    class="w-11 h-11 rounded-full bg-purple-600 text-white font-semibold flex items-center justify-center">
+
+                    S
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= About Card ================= -->
+         <!-- ================= About Card ================= -->
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+
+    <!-- About App -->
+
+    <div
+        class="lg:col-span-2 bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-8">
+
+        <div class="flex flex-col md:flex-row items-center gap-8">
+
+            <!-- Wallet Image -->
+
+            <div
+                class="w-52 h-52 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0">
+
+                <img src="images/wallet.png"
+                    alt="Wallet"
+                    class="w-36 object-contain">
+
+            </div>
+
+            <!-- Content -->
+
+            <div>
+
+                <h2 class="text-3xl font-bold text-gray-800 mb-5">
+                    About Budget Tracker
+                </h2>
+
+                <p class="text-gray-600 leading-8">
+
+                    Budget Tracker is a simple and smart personal finance
+                    management application that helps users record income,
+                    expenses, savings and daily transactions in one place.
+
+                </p>
+
+                <p class="text-gray-600 leading-8 mt-5">
+
+                    Our goal is to help everyone develop better financial
+                    habits, reduce unnecessary spending and achieve financial
+                    freedom through better budgeting.
+
+                </p>
+
+                <!-- Security -->
+
+                <div
+                    class="mt-6 inline-flex items-center gap-3 bg-green-100 text-green-700 px-5 py-3 rounded-xl">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span class="font-medium">
+
+                        100% Secure • Your financial information is safe and protected.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- App Information -->
+
+    <div
+        class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-8">
+
+        <h2 class="text-2xl font-bold mb-8">
+            App Information
+        </h2>
+
+        <div class="space-y-8">
+
+            <!-- Version -->
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center gap-4">
+
+                    <i class="fa-solid fa-code text-purple-600 text-xl"></i>
+
+                    <span class="font-medium">
+                        Version
+                    </span>
+
+                </div>
+
+                <span class="font-semibold">
+                    1.0.0
+                </span>
+
+            </div>
+
+            <!-- Release -->
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center gap-4">
+
+                    <i class="fa-solid fa-calendar-days text-blue-600 text-xl"></i>
+
+                    <span class="font-medium">
+                        Release Date
+                    </span>
+
+                </div>
+
+                <span class="font-semibold">
+                    July 2026
+                </span>
+
+            </div>
+
+            <!-- Platform -->
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center gap-4">
+
+                    <i class="fa-solid fa-globe text-green-600 text-xl"></i>
+
+                    <span class="font-medium">
+                        Platform
+                    </span>
+
+                </div>
+
+                <span class="font-semibold">
+                    Web Application
+                </span>
+
+            </div>
+
+            <!-- Technology -->
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center gap-4">
+
+                    <i class="fa-solid fa-laptop-code text-orange-500 text-xl"></i>
+
+                    <span class="font-medium">
+                        Built With
+                    </span>
+
+                </div>
+
+                <span class="font-semibold">
+                    HTML • Tailwind • JavaScript
+                </span>
+
+            </div>
+
+            <!-- Storage -->
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center gap-4">
+
+                    <i class="fa-solid fa-database text-pink-600 text-xl"></i>
+
+                    <span class="font-medium">
+                        Storage
+                    </span>
+
+                </div>
+
+                <span class="font-semibold">
+                    LocalStorage
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Key Features & At a Glance ================= -->
+ <!-- ================= Key Features & At a Glance ================= -->
+
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
+
+    <!-- ================= Key Features ================= -->
+
+    <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-7">
+
+        <h2 class="text-2xl font-bold mb-8">
+            Key Features
+        </h2>
+
+        <!-- Feature -->
+
+        <div class="flex gap-5 mb-8">
+
+            <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-wallet text-purple-600 text-xl"></i>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-semibold text-lg">
+                    Track Income & Expenses
+                </h3>
+
+                <p class="text-gray-500 mt-2 leading-7">
+                    Record every income and expense to understand where your money goes.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Feature -->
+
+        <div class="flex gap-5 mb-8">
+
+            <div class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-chart-line text-green-600 text-xl"></i>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-semibold text-lg">
+                    Dashboard Analytics
+                </h3>
+
+                <p class="text-gray-500 mt-2 leading-7">
+                    View your balance, income, expenses and savings in one dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Feature -->
+
+        <div class="flex gap-5 mb-8">
+
+            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-file-lines text-blue-600 text-xl"></i>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-semibold text-lg">
+                    Transaction History
+                </h3>
+
+                <p class="text-gray-500 mt-2 leading-7">
+                    Maintain complete records of all your financial transactions.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Feature -->
+
+        <div class="flex gap-5 mb-8">
+
+            <div class="w-14 h-14 rounded-xl bg-yellow-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-piggy-bank text-yellow-500 text-xl"></i>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-semibold text-lg">
+                    Savings Goals
+                </h3>
+
+                <p class="text-gray-500 mt-2 leading-7">
+                    Set savings targets and monitor your progress regularly.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Feature -->
+
+        <div class="flex gap-5">
+
+            <div class="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-lock text-red-500 text-xl"></i>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-semibold text-lg">
+                    Secure Data
+                </h3>
+
+                <p class="text-gray-500 mt-2 leading-7">
+                    Your financial information is stored safely using Local Storage.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= At a Glance ================= -->
+
+    <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-7">
+
+        <div class="flex justify-between items-center mb-8">
+
+            <h2 class="text-2xl font-bold">
+                At a Glance
+            </h2>
+
+            <span class="text-sm text-gray-500">
+                Overall Summary
+            </span>
+
+        </div>
+
+        <div class="grid grid-cols-2 gap-5">
+
+            <!-- Transactions -->
+
+            <div class="bg-purple-50 rounded-2xl p-6">
+
+                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-wallet text-purple-600"></i>
+
+                </div>
+
+                <h3 id="totalTransactions"
+                    class="text-3xl font-bold text-purple-600">
+
+                    128
+
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Transactions
+                </p>
+
+            </div>
+
+            <!-- Income -->
+
+            <div class="bg-green-50 rounded-2xl p-6">
+
+                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-arrow-trend-up text-green-600"></i>
+
+                </div>
+
+                <h3 id="totalIncome"
+                    class="text-3xl font-bold text-green-600">
+
+                    ₹1,45,000
+
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Income
+                </p>
+
+            </div>
+
+            <!-- Expense -->
+
+            <div class="bg-red-50 rounded-2xl p-6">
+
+                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-arrow-trend-down text-red-600"></i>
+
+                </div>
+
+                <h3 id="totalExpense"
+                    class="text-3xl font-bold text-red-600">
+
+                    ₹1,02,850
+
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Expenses
+                </p>
+
+            </div>
+
+            <!-- Goals -->
+
+            <div class="bg-blue-50 rounded-2xl p-6">
+
+                <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5">
+
+                    <i class="fa-solid fa-bullseye text-blue-600"></i>
+
+                </div>
+
+                <h3 id="totalGoals"
+                    class="text-3xl font-bold text-blue-600">
+
+                    6
+
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Savings Goals
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Bottom Section ================= -->
+ <!-- ================= Bottom Section ================= -->
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+
+    <!-- Made With Love -->
+
+    <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-7">
+
+        <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6">
+
+            <i class="fa-solid fa-heart text-3xl text-purple-600"></i>
+
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4">
+            Made with ❤️
+        </h2>
+
+        <p class="text-gray-500 leading-7">
+
+            Budget Tracker is designed to make personal finance simple and
+            organized. Our goal is to help everyone save money, spend wisely,
+            and achieve their financial goals with confidence.
+
+        </p>
+
+    </div>
+
+    <!-- Support -->
+
+    <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-7">
+
+        <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-6">
+
+            <i class="fa-solid fa-headset text-3xl text-green-600"></i>
+
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4">
+            Support
+        </h2>
+
+        <p class="text-gray-500 leading-7">
+
+            Have questions or feedback? Our support team is always ready
+            to help you.
+
+        </p>
+
+        <a href="mailto:support@budgettracker.app"
+            class="inline-block mt-5 text-purple-600 font-semibold hover:underline">
+
+            support@budgettracker.app
+
+        </a>
+
+    </div>
+
+    <!-- Connect -->
+
+    <div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-7">
+
+        <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+
+            <i class="fa-solid fa-share-nodes text-3xl text-blue-600"></i>
+
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4">
+            Connect With Us
+        </h2>
+
+        <p class="text-gray-500 mb-6">
+
+            Follow us for finance tips, product updates and announcements.
+
+        </p>
+
+        <div class="flex gap-4 text-2xl">
+
+            <a href="#" class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-sky-500 hover:text-white transition">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#" class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-pink-500 hover:text-white transition">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center hover:bg-blue-700 hover:text-white transition">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="mt-10 bg-white rounded-2xl shadow-sm py-6">
+
+    <div class="flex flex-col md:flex-row justify-between items-center px-8">
+
+        <p class="text-gray-500">
+
+            © <span id="currentYear"></span> Budget Tracker. All Rights Reserved.
+
+        </p>
+
+        <p class="text-gray-500 mt-3 md:mt-0">
+
+            Version <span class="font-semibold text-purple-600">1.0.0</span>
+
+        </p>
+
+    </div>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="../js/about.js"></script>
+
 </body>
+
 </html>
