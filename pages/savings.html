@@ -7,44 +7,403 @@
     <title>Savings</title>
 
     <link href="../src/output.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
-<body>
 
-    <body class="bg-gray-100">
+<body class="bg-gray-100">
 
-        <div class="max-w-4xl mx-auto p-8">
 
-            <h1 class="text-3xl font-bold mb-6">Savings Tracker</h1>
+    <div class="flex min-h-screen">
 
-            <div class="bg-white p-6 rounded-lg shadow">
 
-                <form id="savingForm">
+        <!-- ================= Sidebar ================= -->
 
-                    <label class="block mb-2 font-semibold">Saving Name</label>
-                    <input type="text" id="savingName" class="w-full border p-3 rounded mb-4"
-                        placeholder="Emergency Fund" required>
+        <aside class="fixed left-0 top-0 w-64 h-screen bg-white shadow-lg flex flex-col justify-between">
 
-                    <label class="block mb-2 font-semibold">Target Amount</label>
-                    <input type="number" id="targetAmount" class="w-full border p-3 rounded mb-4" required>
 
-                    <label class="block mb-2 font-semibold">Saved Amount</label>
-                    <input type="number" id="savedAmount" class="w-full border p-3 rounded mb-4" required>
+            <div>
 
-                    <button class="bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700">
-                        Add Saving
-                    </button>
 
-                </form>
+                <!-- Logo -->
+
+                <div class="flex items-center gap-4 px-6 py-6">
+
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 
+                flex items-center justify-center text-white text-xl">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h1 class="font-bold text-lg">
+                            Budget
+                        </h1>
+
+                        <h1 class="font-bold text-lg">
+                            Tracker
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Navigation -->
+
+                <nav class="mt-5 space-y-2">
+
+
+                    <a href="dashboard.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+
+                    </a>
+
+
+
+                    <a href="add-expense.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-circle-minus"></i>
+                        Add Expense
+
+                    </a>
+
+
+
+                    <a href="add-income.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-square-plus"></i>
+                        Add Income
+
+                    </a>
+
+
+
+                    <a href="transaction.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-file-lines"></i>
+                        Transactions
+
+                    </a>
+
+
+
+                    <a href="reports.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reports
+
+                    </a>
+
+
+
+                    <a href="categories.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-layer-group"></i>
+                        Categories
+
+                    </a>
+
+
+
+                    <!-- Active Savings -->
+
+                    <a href="savings.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                bg-purple-600 text-white shadow-lg">
+
+                        <i class="fa-solid fa-piggy-bank"></i>
+                        Savings
+
+                    </a>
+
+
+
+                    <a href="settings.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+
+                    </a>
+
+
+
+                    <a href="about.html" class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl 
+                hover:bg-purple-100 hover:text-purple-700 transition">
+
+                        <i class="fa-solid fa-circle-info"></i>
+                        About
+
+                    </a>
+
+
+                </nav>
+
 
             </div>
 
+
+
+            <!-- Bottom Card -->
+
+
+            <div class="m-5 bg-purple-50 rounded-3xl p-6">
+
+
+                <div class="flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-purple-600 
+                flex items-center justify-center text-white text-3xl">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                </div>
+
+
+                <h2 class="font-semibold text-center mt-5">
+
+                    Your data is safe
+
+                </h2>
+
+
+                <p class="text-center text-gray-500 text-sm mt-3 leading-6">
+
+                    We value your privacy and keep your financial data secure.
+
+                </p>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+
+
+        <!-- ================= Main Content ================= -->
+
+
+        <main class="ml-64 flex-1 p-8 bg-gray-100">
+
+
+            <!-- Header -->
+
+
+            <div class="mb-8">
+
+
+                <h1 class="text-4xl font-bold">
+
+                    Savings
+
+                </h1>
+
+
+                <div class="flex items-center gap-2 mt-2 text-gray-500">
+
+
+                    <span class="text-purple-600 font-medium">
+                        Dashboard
+                    </span>
+
+
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+
+
+                    <span>
+                        Savings
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <!-- Summary Cards -->
+
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+
+                <div class="bg-purple-100 rounded-3xl p-6">
+
+                    <h3 class="text-gray-600">
+                        Total Savings
+                    </h3>
+
+                    <h2 id="totalSavings" class="text-3xl font-bold mt-3">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+
+                <div class="bg-green-100 rounded-3xl p-6">
+
+                    <h3 class="text-gray-600">
+                        Completed Goals
+                    </h3>
+
+                    <h2 id="completedGoals" class="text-3xl font-bold mt-3">
+                        0
+                    </h2>
+
+                </div>
+
+
+
+                <div class="bg-yellow-100 rounded-3xl p-6">
+
+                    <h3 class="text-gray-600">
+                        Active Goals
+                    </h3>
+
+                    <h2 id="activeGoals" class="text-3xl font-bold mt-3">
+                        0
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+            <!-- Add Savings Form -->
+
+
+            <div class="bg-white rounded-3xl shadow-sm border p-8">
+
+
+                <div class="flex items-center gap-3 mb-8">
+
+
+                    <div class="w-12 h-12 rounded-full bg-purple-100 
+                flex items-center justify-center">
+
+                        <i class="fa-solid fa-piggy-bank text-purple-600"></i>
+
+                    </div>
+
+
+                    <h2 class="text-2xl font-bold">
+
+                        Add Saving Goal
+
+                    </h2>
+
+
+                </div>
+
+
+
+
+
+                <form id="savingForm" class="space-y-6">
+
+
+                    <div>
+
+                        <label class="font-semibold block mb-2">
+                            Saving Name
+                        </label>
+
+                        <input type="text" id="savingName" placeholder="Emergency Fund"
+                            class="w-full border rounded-xl px-4 py-4 outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+
+                    </div>
+
+
+
+
+                    <div>
+
+                        <label class="font-semibold block mb-2">
+                            Target Amount
+                        </label>
+
+                        <input type="number" id="targetAmount"
+                            class="w-full border rounded-xl px-4 py-4 outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+
+                    </div>
+
+
+
+
+                    <div>
+
+                        <label class="font-semibold block mb-2">
+                            Saved Amount
+                        </label>
+
+                        <input type="number" id="savedAmount"
+                            class="w-full border rounded-xl px-4 py-4 outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+
+                    </div>
+
+
+
+
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 
+                text-white py-4 rounded-xl font-semibold text-lg transition">
+
+                        Add Saving
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+
+
+
+            <!-- Saved List -->
+
+
             <div id="savingList" class="mt-8 space-y-4"></div>
 
-        </div>
 
-        <script src="../js/savings.js"></script>
 
-    </body>
+        </main>
+
+
+
+    </div>
+
+
+
+    <script src="../js/savings.js"></script>
+
+
+</body>
 
 </html>

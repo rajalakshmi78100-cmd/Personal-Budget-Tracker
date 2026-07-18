@@ -5,114 +5,628 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Income</title>
+
     <link href="../src/output.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
 
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-    
+    <div class="flex min-h-screen">
 
-        <div class="container">
+        <!-- ================= Sidebar ================= -->
 
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <h2>💰 Budget Tracker</h2>
+        <aside class="fixed left-0 top-0 w-64 h-screen bg-white shadow-lg flex flex-col justify-between">
 
-                <ul>
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="add-expense.html">Add Expense</a></li>
-                    <li class="active"><a href="add-income.html">Add Income</a></li>
-                    <li><a href="transactions.html">Transactions</a></li>
-                    <li><a href="reports.html">Reports</a></li>
-                    <li><a href="categories.html">Categories</a></li>
-                    <li><a href="goals.html">Goals</a></li>
-                    <li><a href="settings.html">Settings</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
+            <div>
+
+                <!-- Logo -->
+
+                <div class="flex items-center gap-4 px-6 py-6">
+
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-white text-xl">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h1 class="font-bold text-lg">Budget</h1>
+                        <h1 class="font-bold text-lg">Tracker</h1>
+
+                    </div>
+
+                </div>
+
+                <!-- Navigation -->
+
+                <nav class="mt-5 space-y-2">
+
+                    <a href="dashboard.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Dashboard
+
+                    </a>
+
+                    <a href="add-expense.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-circle-minus"></i>
+
+                        Add Expense
+
+                    </a>
+
+                    <a href="add-income.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl bg-purple-600 text-white shadow-lg">
+
+                        <i class="fa-solid fa-square-plus"></i>
+
+                        Add Income
+
+                    </a>
+
+                    <a href="transaction.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        Transactions
+
+                    </a>
+
+                    <a href="reports.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        Reports
+
+                    </a>
+
+                    <a href="categories.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                        Categories
+
+                    </a>
+
+                    <a href="savings.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-piggy-bank"></i>
+
+                        Savings
+
+                    </a>
+
+                    <a href="settings.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        Settings
+
+                    </a>
+
+                    <a href="about.html"
+                        class="flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 transition">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        About
+
+                    </a>
+
+                </nav>
 
             </div>
 
-            <!-- Main Content -->
-            <div class="main">
+            <!-- Bottom Card -->
 
-                <h1>Add Income</h1>
+            <div class="m-5 bg-purple-50 rounded-3xl p-6 text-center">
 
-                <div class="income-container">
+                <div
+                    class="w-20 h-20 rounded-full bg-purple-600 mx-auto flex items-center justify-center text-white text-3xl">
 
-                    <div class="income-form">
+                    <i class="fa-solid fa-shield-halved"></i>
 
-                        <form id="incomeForm">
+                </div>
 
-                            <label>Amount</label>
-                            <input type="number" id="amount" placeholder="Enter Amount" required>
+                <h2 class="font-semibold mt-5">
 
-                            <label>Income Source</label>
+                    Your data is safe
 
-                            <select id="source">
-                                <option>Salary</option>
-                                <option>Freelance</option>
-                                <option>Business</option>
-                                <option>Investment</option>
-                                <option>Interest</option>
-                                <option>Rental Income</option>
-                                <option>Others</option>
-                            </select>
+                </h2>
 
-                            <label>Date</label>
+                <p class="text-gray-500 text-sm mt-3">
 
-                            <input type="date" id="date">
+                    We value your privacy and keep your financial data secure.
 
-                            <label>Payment Method</label>
+                </p>
 
-                            <select id="payment">
+            </div>
 
-                                <option>Cash</option>
-                                <option>UPI</option>
-                                <option>Bank Transfer</option>
-                                <option>Credit Card</option>
+        </aside>
 
-                            </select>
+        <!-- ================= Main ================= -->
 
-                            <label>Description</label>
+        <main class="ml-64 flex-1 p-8 bg-gray-100">
 
-                            <input type="text" id="description" placeholder="Enter Description" required>
+            <!-- Header -->
 
-                            <label>Notes</label>
+            <div class="flex justify-between items-center mb-8">
 
-                            <textarea id="notes" rows="4" placeholder="Additional Notes"></textarea>
+                <div>
 
-                            <button type="submit">
-                                <i class="fa-solid fa-plus"></i>
-                                Add Income
-                            </button>
+                    <h1 class="text-4xl font-bold">
+
+                        Add Income
+
+                    </h1>
+
+                    <div class="flex items-center gap-2 mt-2 text-gray-500">
+
+                        <span class="text-purple-600 font-medium">
+
+                            Dashboard
+
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+
+                        <span>
+
+                            Add Income
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="flex items-center gap-5">
+
+                    <button class="border rounded-xl px-6 py-3 bg-white shadow-sm">
+
+                        <i class="fa-regular fa-calendar mr-2"></i>
+
+                        May 2025
+
+                    </button>
+
+                    <div class="relative">
+
+                        <i class="fa-regular fa-bell text-2xl"></i>
+
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+
+                            3
+
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-semibold text-lg">
+
+                        R
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Grid -->
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+
+                <!-- Left -->
+
+                <div class="xl:col-span-2">
+
+                    <div class="bg-white rounded-3xl shadow-sm p-8 border">
+
+                        <div class="flex items-center gap-3 mb-8">
+
+                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+
+                                <i class="fa-solid fa-wallet text-green-600"></i>
+
+                            </div>
+
+                            <h2 class="text-2xl font-bold text-green-600">
+
+                                Income Details
+
+                            </h2>
+
+                        </div>
+
+                        <form id="incomeForm" class="space-y-6">
+
+                            <!-- Amount -->
+
+                            <div>
+
+                                <label class="font-semibold block mb-2">
+
+                                    Amount <span class="text-red-500">*</span>
+
+                                </label>
+
+                                <div class="flex">
+
+                                    <div
+                                        class="bg-green-50 border border-r-0 rounded-l-xl px-5 flex items-center text-green-600 font-bold">
+
+                                        ₹
+
+                                    </div>
+
+                                    <input type="number" id="amount" placeholder="Enter amount"
+                                        class="w-full border rounded-r-xl px-4 py-4 focus:ring-2 focus:ring-green-500 outline-none">
+
+                                </div>
+
+                            </div>
+
+                            <!-- Source -->
+
+                            <div>
+
+                                <label class="font-semibold block mb-2">
+
+                                    Source <span class="text-red-500">*</span>
+
+                                </label>
+
+                                <select id="source"
+                                    class="w-full border rounded-xl px-4 py-4 focus:ring-2 focus:ring-green-500">
+
+                                    <option>Salary</option>
+                                    <option>Freelance</option>
+                                    <option>Business</option>
+                                    <option>Investment</option>
+                                    <option>Interest</option>
+                                    <option>Rental Income</option>
+                                    <option>Others</option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- Date + Payment -->
+
+                            <div class="grid md:grid-cols-2 gap-6">
+
+                                <div>
+
+                                    <label class="font-semibold block mb-2">
+
+                                        Date <span class="text-red-500">*</span>
+
+                                    </label>
+
+                                    <input type="date" id="date"
+                                        class="w-full border rounded-xl px-4 py-4 focus:ring-2 focus:ring-green-500">
+
+                                </div>
+
+                                <div>
+
+                                    <label class="font-semibold block mb-2">
+
+                                        Payment Method
+
+                                    </label>
+
+                                    <select id="payment"
+                                        class="w-full border rounded-xl px-4 py-4 focus:ring-2 focus:ring-green-500">
+
+                                        <option>Cash</option>
+                                        <option>UPI</option>
+                                        <option>Bank Transfer</option>
+                                        <option>Credit Card</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+                            <!-- Description -->
+
+                            <div>
+
+                                <label class="font-semibold block mb-2">
+
+                                    Description <span class="text-red-500">*</span>
+
+                                </label>
+
+                                <input type="text" id="description" placeholder="Enter income description"
+                                    class="w-full border rounded-xl px-4 py-4 focus:ring-2 focus:ring-green-500 outline-none">
+
+                                <p class="text-sm text-gray-500 mt-2">
+
+                                    e.g., Monthly Salary, Freelance Project, Bonus
+
+                                </p>
+
+                            </div>
+
+                            <!-- Notes -->
+
+                            <div>
+
+                                <label class="font-semibold block mb-2">
+
+                                    Notes (Optional)
+
+                                </label>
+
+                                <textarea id="notes" rows="5" placeholder="Add any additional notes..."
+                                    class="w-full border rounded-xl px-4 py-4 resize-none focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+
+                            </div>
+
+                            <!-- Buttons -->
+
+                            <div class="grid grid-cols-2 gap-5 pt-2">
+
+                                <button type="submit"
+                                    style="background:green;color:white;padding:16px;width:100%;font-size:18px;">
+                                    Add Income
+                                </button>
+                                <button type="reset"
+                                    class="border border-gray-300 hover:bg-gray-100 py-4 rounded-xl font-semibold transition duration-300">
+
+                                    Cancel
+
+                                </button>
+
+                            </div>
+
+                            <p class="text-red-500 text-sm mt-2">
+
+                                * Required fields
+
+                            </p>
 
                         </form>
 
                     </div>
 
-                    <!-- Right Side -->
+                </div>
 
-                    <div class="income-side">
+                <!-- ================= Right Side ================= -->
 
-                        <h3>Income Sources</h3>
+                <div class="space-y-6">
 
-                        <div class="card">💼 Salary</div>
-                        <div class="card">💻 Freelance</div>
-                        <div class="card">🏢 Business</div>
-                        <div class="card">📈 Investment</div>
-                        <div class="card">💸 Interest</div>
-                        <div class="card">🏠 Rental Income</div>
-                        <div class="card">📦 Others</div>
+                    <!-- Income Sources -->
 
-                        <div class="tip">
-                            <h3>Tip</h3>
+                    <div class="bg-white rounded-3xl shadow-sm border p-6">
 
-                            <p>
-                                Record your income regularly to track cash flow and manage
-                                your finances better.
-                            </p>
+                        <h2 class="text-2xl font-semibold mb-6">
+
+                            Income Sources
+
+                        </h2>
+
+                        <div class="space-y-4">
+
+                            <!-- Salary -->
+
+                            <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
+
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                    </div>
+                                    <span>Salary</span>
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                            <!-- Freelance -->
+                            <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                    </div>
+
+                                    <span class="font-medium text-lg">
+                                        Free Lancer
+                                    </span>
+
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                            <!-- Business -->
+
+                           <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center">
+
+                                        <i class="fa-solid fa-building"></i>
+
+                                    </div>
+
+                                    <span class="font-medium text-lg">
+
+                                        Business
+
+                                    </span>
+
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                            <!-- Investment -->
+
+                           <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-yellow-500 text-white flex items-center justify-center">
+
+                                        <i class="fa-solid fa-chart-line"></i>
+
+                                    </div>
+
+                                    <span class="font-medium text-lg">
+
+                                        Investments
+
+                                    </span>
+
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                            <!-- Interest -->
+
+                            <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center">
+
+                                        <i class="fa-solid fa-percent"></i>
+
+                                    </div>
+
+                                    <span class="font-medium text-lg">
+
+                                        Interest
+
+                                    </span>
+
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                            <!-- Rental -->
+
+                            <label onclick="selectIncome(this)"
+                                class="income-option flex items-center justify-between p-4 rounded-2xl cursor-pointer transition">
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-cyan-500 text-white flex items-center justify-center">
+
+                                        <i class="fa-solid fa-house"></i>
+
+                                    </div>
+
+                                    <span class="font-medium text-lg">
+
+                                        Rental Income
+
+                                    </span>
+
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                            <!-- Others -->
+
+                            <label
+                                class="flex items-center justify-between rounded-2xl p-4 hover:bg-gray-50 cursor-pointer">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-400 text-white flex items-center justify-center">
+
+                                        <i class="fa-solid fa-ellipsis"></i>
+
+                                    </div>
+
+                                    <span class="font-medium text-lg">
+
+                                        Others
+
+                                    </span>
+
+                                </div>
+
+                                <input type="radio" name="incomeType">
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Tip Card -->
+
+                    <div class="bg-green-50 rounded-3xl border p-6">
+
+                        <div class="flex justify-between items-center">
+
+                            <div>
+
+                                <h3 class="text-2xl font-semibold text-green-700">
+
+                                    💡 Tip
+
+                                </h3>
+
+                                <p class="text-gray-600 leading-8 mt-4">
+
+                                    Record your income regularly to track your cash flow and plan your expenses better.
+
+                                </p>
+
+                            </div>
+
+                            <i class="fa-solid fa-wallet text-7xl text-green-300"></i>
 
                         </div>
 
@@ -122,10 +636,12 @@
 
             </div>
 
-        </div>
+        </main>
 
-        <script src="../js/income.js"></script>
+    </div>
 
-    </body>
+    <script src="../js/income.js"></script>
+
+</body>
 
 </html>
