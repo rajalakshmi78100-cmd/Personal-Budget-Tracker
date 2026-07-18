@@ -218,6 +218,17 @@ function selectIncome(element) {
     // Select radio button
     element.querySelector("input").checked = true;
 
+
+    // ==============================
+    // UPDATE SOURCE DROPDOWN
+    // ==============================
+
+    let incomeName = element.querySelector("span").innerText;
+
+
+    // Change Source dropdown value
+    document.getElementById("source").value = incomeName;
+
 }
 
 
