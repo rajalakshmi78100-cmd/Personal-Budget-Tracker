@@ -1,12 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (CLI Output) -->
+    <link rel="stylesheet" href="../src/output.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <title>Dashboard</title>
+
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f6f7fb;
+        }
+    </style>
+
 </head>
+
 <body>
-    
+
+
+        <!-- ================= Sidebar ================= -->
+
+        <aside id="sidebar"
+class="fixed top-0 left-0 z-50 w-64 h-screen bg-white shadow-lg
+transform -translate-x-full lg:translate-x-0
+transition-transform duration-300
+flex flex-col justify-between">
+
+            <!-- Top -->
+<div class="flex justify-end lg:hidden p-4">
+
+    <button id="close-btn" class="text-2xl text-gray-700">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+            <div>
+
+                <!-- Logo -->
+
+                <div class="flex items-center gap-4 px-6 py-6">
+
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-white text-xl">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h1 class="font-bold text-lg">
+                            Budget
+                        </h1>
+
+                        <h1 class="font-bold text-lg">
+                            Tracker
+                        </h1>
+
+                    </div>
+
+                </div>
+
+                <!-- Navigation -->
+
+                <nav class="mt-5 space-y-2">
+
+                    <a href="../Personal_Budget_Tracker/pages/dashboard.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/add-expense.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-circle-minus"></i>
+                        Add Expense
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/add-income.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-square-plus"></i>
+                        Add Income
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/transaction.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-file-lines"></i>
+                        Transactions
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/reports.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reports
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/categories.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-layer-group"></i>
+                        Categories
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/savings.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-piggy-bank"></i>
+                        Savings
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/settings.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+
+                    </a>
+
+                    <a href="../Personal_Budget_Tracker/pages/about.html"
+                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+
+                        <i class="fa-solid fa-circle-info"></i>
+                        About
+
+                    </a>
+
+                </nav>
+            </div>
+
+            <!-- Bottom Card -->
+
+            <div class="m-5 bg-purple-50 rounded-3xl p-6">
+
+                <div class="flex justify-center">
+
+                    <div
+                        class="w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center text-white text-3xl">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                </div>
+
+                <h2 class="font-semibold text-center mt-5">
+
+                    Your data is safe
+
+                </h2>
+
+                <p class="text-center text-gray-500 text-sm mt-3 leading-6">
+
+                    We value your privacy and keep your financial data secure.
+
+                </p>
+
+            </div>
+
+        </aside>
+        <div id="overlay"
+class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden">
+</div>
+        
+
+        <!-- ================= Main Content ================= -->
+
+      <main class="lg:ml-64 p-6 min-h-screen">
+
+            <!-- Header and Dashboard Cards -->
+
+            <!-- Mobile Menu Button -->
+<div class="flex items-center justify-between lg:hidden mb-6">
+
+    <button id="menu-btn" class="text-2xl text-purple-600">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <h1 class="text-2xl font-bold">
+        Budget Tracker
+    </h1>
+
+</div>
+            <!-- ================= Header ================= -->
+
+            <div class="flex justify-between items-center">
+
+                <!-- Left -->
+
+                <div>
+
+                    <h1 class="text-3xl font-bold">
+                        Dashboard
+                    </h1>
+
+                    <p class="text-gray-500 mt-1">
+                        Welcome back 👋
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="flex items-center gap-5">
+
+                    <!-- Month -->
+
+                    <select
+                        class="border border-gray-300 rounded-xl px-4 py-2 bg-white outline-none focus:ring-2 focus:ring-purple-500">
+
+                        <option>This Month</option>
+                        <option>Last Month</option>
+                        <option>This Year</option>
+
+                    </select>
+
+                    <!-- Notification -->
+
+                    <button class="relative w-11 h-11 rounded-full bg-white shadow flex items-center justify-center">
+
+                        <i class="fa-solid fa-bell text-gray-600"></i>
+
+                        <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500"></span>
+
+                    </button>
+
+                    <!-- Profile -->
+
+                    <div
+                        class="w-11 h-11 rounded-full bg-purple-600 text-white font-semibold flex items-center justify-center">
+
+                        S
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= Welcome Banner ================= -->
+
+            <div
+                class="mt-8 bg-gradient-to-r from-purple-600 to-purple-400 rounded-3xl p-8 flex justify-between items-center">
+
+                <div>
+
+                    <h2 id="greeting" class="text-3xl font-bold text-white">
+
+                        Good Morning 👋
+
+                    </h2>
+
+                    <p class="text-purple-100 mt-2">
+
+                        Track your income, expenses and savings easily.
+
+                    </p>
+
+                    <button class="mt-6 bg-white text-purple-600 font-semibold px-6 py-3 rounded-xl hover:bg-gray-100">
+
+                        View Reports
+
+                    </button>
+
+                </div>
+
+                <!-- Right Icon -->
+
+                <div class="hidden lg:flex w-36 h-36 rounded-full bg-white/20 items-center justify-center">
+
+                    <i class="fa-solid fa-wallet text-white text-6xl"></i>
+
+                </div>
+
+            </div>
+
+            <!-- ================= Summary Cards ================= -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-8">
+
+                <!-- ================= Summary Cards ================= -->
+
+                <!-- Total Balance -->
+
+                <div class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition">
+
+                    <div class="flex justify-between items-center">
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Total Balance
+                            </p>
+
+                            <h2 class="text-3xl font-bold mt-2">
+                                ₹85,400
+                            </h2>
+
+                            <p class="text-green-600 text-sm mt-2">
+                                +12% from last month
+                            </p>
+
+                        </div>
+
+                        <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center">
+
+                            <i class="fa-solid fa-wallet text-purple-600 text-2xl"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Income -->
+
+                <div class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition">
+
+                    <div class="flex justify-between items-center">
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Income
+                            </p>
+
+                            <h2 class="text-3xl font-bold mt-2">
+                                ₹45,000
+                            </h2>
+
+                            <p class="text-green-600 text-sm mt-2">
+                                +8% this month
+                            </p>
+
+                        </div>
+
+                        <div class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center">
+
+                            <i class="fa-solid fa-arrow-trend-up text-green-600 text-2xl"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Expense -->
+
+                <div class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition">
+
+                    <div class="flex justify-between items-center">
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Expense
+                            </p>
+
+                            <h2 class="text-3xl font-bold mt-2">
+                                ₹18,700
+                            </h2>
+
+                            <p class="text-red-500 text-sm mt-2">
+                                +5% this month
+                            </p>
+
+                        </div>
+
+                        <div class="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+
+                            <i class="fa-solid fa-arrow-trend-down text-red-500 text-2xl"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Savings -->
+
+                <div class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition">
+
+                    <div class="flex justify-between items-center">
+
+                        <div>
+
+                            <p class="text-gray-500 text-sm">
+                                Savings
+                            </p>
+
+                            <h2 class="text-3xl font-bold mt-2">
+                                ₹26,300
+                            </h2>
+
+                            <p class="text-blue-500 text-sm mt-2">
+                                Goal 65%
+                            </p>
+
+                        </div>
+
+                        <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center">
+
+                            <i class="fa-solid fa-piggy-bank text-blue-600 text-2xl"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- ================= Charts Section ================= -->
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+
+                <!-- Expense by Category -->
+
+                <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm p-6">
+
+                    <div class="flex justify-between items-center mb-6">
+
+                        <h2 class="text-xl font-semibold">
+                            Expense by Category
+                        </h2>
+
+                        <button class="text-purple-600 font-medium hover:underline">
+                            View All
+                        </button>
+
+                    </div>
+
+                    <div class="space-y-6">
+
+                        <!-- Food -->
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+
+                                <span class="font-medium">
+                                    Food & Dining
+                                </span>
+
+                                <span class="text-gray-500">
+                                    ₹8,000
+                                </span>
+
+                            </div>
+
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+
+                                <div class="bg-purple-600 h-3 rounded-full w-4/5"></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Shopping -->
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+
+                                <span class="font-medium">
+                                    Shopping
+                                </span>
+
+                                <span class="text-gray-500">
+                                    ₹5,500
+                                </span>
+
+                            </div>
+
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+
+                                <div class="bg-blue-500 h-3 rounded-full w-2/3"></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Travel -->
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+
+                                <span class="font-medium">
+                                    Travel
+                                </span>
+
+                                <span class="text-gray-500">
+                                    ₹3,000
+                                </span>
+
+                            </div>
+
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+
+                                <div class="bg-green-500 h-3 rounded-full w-1/2"></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Bills -->
+
+                        <div>
+
+                            <div class="flex justify-between mb-2">
+
+                                <span class="font-medium">
+                                    Bills
+                                </span>
+
+                                <span class="text-gray-500">
+                                    ₹2,200
+                                </span>
+
+                            </div>
+
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+
+                                <div class="bg-yellow-500 h-3 rounded-full w-2/5"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Budget Progress -->
+
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+
+                    <h2 class="text-xl font-semibold mb-6">
+                        Budget Progress
+                    </h2>
+
+                    <div class="flex justify-center">
+
+                        <div
+                            class="w-40 h-40 rounded-full border-[12px] border-purple-600 flex items-center justify-center">
+
+                            <div class="text-center">
+
+                                <h2 class="text-3xl font-bold">
+                                    68%
+                                </h2>
+
+                                <p class="text-gray-500 text-sm">
+                                    Used
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8 space-y-4">
+
+                        <div class="flex justify-between">
+
+                            <span class="text-gray-500">
+                                Monthly Budget
+                            </span>
+
+                            <span class="font-semibold">
+                                ₹50,000
+                            </span>
+
+                        </div>
+
+                        <div class="flex justify-between">
+
+                            <span class="text-gray-500">
+                                Spent
+                            </span>
+
+                            <span class="font-semibold text-red-500">
+                                ₹34,000
+                            </span>
+
+                        </div>
+
+                        <div class="flex justify-between">
+
+                            <span class="text-gray-500">
+                                Remaining
+                            </span>
+
+                            <span class="font-semibold text-green-600">
+                                ₹16,000
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- ================= Recent Transactions ================= -->
+
+            <div class="mt-8 bg-white rounded-2xl shadow-sm p-6">
+
+                <!-- Heading -->
+
+                <div class="flex justify-between items-center mb-6">
+
+                    <div>
+
+                        <h2 class="text-xl font-semibold">
+                            Recent Transactions
+                        </h2>
+
+                        <p class="text-gray-500 text-sm mt-1">
+                            Your latest income and expenses
+                        </p>
+
+                    </div>
+
+                    <button class="px-5 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition">
+
+                        View All
+
+                    </button>
+
+                </div>
+
+                <!-- Table -->
+
+                <div class="overflow-x-auto">
+
+                    <table class="w-full">
+
+                        <thead>
+
+                            <tr class="border-b text-left text-gray-500">
+
+                                <th class="py-4">Date</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th class="text-right">Amount</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr class="border-b hover:bg-gray-50">
+
+                                <td class="py-4">15 Jul 2026</td>
+
+                                <td>Food</td>
+
+                                <td>Lunch</td>
+
+                                <td>
+
+                                    <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+
+                                        Expense
+
+                                    </span>
+
+                                </td>
+
+                                <td class="text-right text-red-600 font-semibold">
+
+                                    - ₹350
+
+                                </td>
+
+                            </tr>
+
+                            <tr class="border-b hover:bg-gray-50">
+
+                                <td class="py-4">14 Jul 2026</td>
+
+                                <td>Salary</td>
+
+                                <td>Monthly Salary</td>
+
+                                <td>
+
+                                    <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">
+
+                                        Income
+
+                                    </span>
+
+                                </td>
+
+                                <td class="text-right text-green-600 font-semibold">
+
+                                    + ₹45,000
+
+                                </td>
+
+                            </tr>
+
+                            <tr class="border-b hover:bg-gray-50">
+
+                                <td class="py-4">13 Jul 2026</td>
+
+                                <td>Travel</td>
+
+                                <td>Cab</td>
+
+                                <td>
+
+                                    <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+
+                                        Expense
+
+                                    </span>
+
+                                </td>
+
+                                <td class="text-right text-red-600 font-semibold">
+
+                                    - ₹450
+
+                                </td>
+
+                            </tr>
+
+                            <tr class="border-b hover:bg-gray-50">
+
+                                <td class="py-4">12 Jul 2026</td>
+
+                                <td>Shopping</td>
+
+                                <td>Clothes</td>
+
+                                <td>
+
+                                    <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+
+                                        Expense
+
+                                    </span>
+
+                                </td>
+
+                                <td class="text-right text-red-600 font-semibold">
+
+                                    - ₹1,850
+
+                                </td>
+
+                            </tr>
+
+                            <tr class="hover:bg-gray-50">
+
+                                <td class="py-4">10 Jul 2026</td>
+
+                                <td>Freelancing</td>
+
+                                <td>Website Project</td>
+
+                                <td>
+
+                                    <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">
+
+                                        Income
+
+                                    </span>
+
+                                </td>
+
+                                <td class="text-right text-green-600 font-semibold">
+
+                                    + ₹12,000
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </main>
+
+
+    <script src="../js/dashboard.js"></script>
+
 </body>
+
 </html>
