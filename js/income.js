@@ -30,7 +30,7 @@ if (incomeForm) {
     incomeForm.addEventListener("submit", function (e) {
 
         e.preventDefault();
-         console.log("Submit event is working!");
+        console.log("Submit event is working!");
 
         // Validation
 
@@ -76,12 +76,21 @@ if (incomeForm) {
 
         incomes.push(income);
 
-        // Save Local Storage
-
+        // Save Income
         localStorage.setItem("incomes", JSON.stringify(incomes));
 
-        // Success
+        // Add Notification
+        notifications.unshift(
+            `Income of ₹${income.amount} added successfully`
+        );
 
+        // Save Notifications
+        localStorage.setItem(
+            "notifications",
+            JSON.stringify(notifications)
+        );
+
+        // Success
         alert("✅ Income Added Successfully!");
 
         console.log(incomes);
@@ -230,6 +239,44 @@ function selectIncome(element) {
     document.getElementById("source").value = incomeName;
 
 }
+// ==============================
+// DROPDOWN -> INCOME SOURCE CARD
+// ==============================
+
+source.addEventListener("change", function () {
+
+    const selectedValue = this.value;
+
+    document.querySelectorAll(".income-option").forEach(item => {
+
+        const incomeName = item.querySelector("span").innerText.trim();
+
+        // Remove previous selection
+        item.classList.remove(
+            "bg-green-50",
+            "border",
+            "border-green-500",
+            "shadow-md"
+        );
+
+        item.querySelector("input").checked = false;
+
+        // Match dropdown value with card text
+        if (incomeName === selectedValue) {
+
+            item.classList.add(
+                "bg-green-50",
+                "border",
+                "border-green-500",
+                "shadow-md"
+            );
+
+            item.querySelector("input").checked = true;
+        }
+
+    });
+
+});
 
 
 // Default selected item
@@ -237,7 +284,7 @@ window.addEventListener("load", () => {
 
     const firstOption = document.querySelector(".income-option");
 
-    if(firstOption){
+    if (firstOption) {
 
         firstOption.classList.add(
             "bg-green-50",
@@ -251,3 +298,49 @@ window.addEventListener("load", () => {
     }
 
 });
+// ======================================
+// NOTIFICATION
+// ======================================
+
+const notificationBtn = document.getElementById("notificationBtn");
+const notificationBox = document.getElementById("notificationBox");
+const notificationContent = document.getElementById("notificationContent");
+const notificationDot = document.getElementById("notificationDot");
+let notifications =
+    JSON.parse(localStorage.getItem("notifications")) || [];
+
+if (notificationBtn) {
+
+    notificationBtn.addEventListener("click", () => {
+
+        notificationBox.classList.toggle("hidden");
+
+        if (notifications.length === 0) {
+
+            notificationContent.innerHTML = "No new notifications";
+            notificationDot.classList.add("hidden");
+
+        } else {
+
+            notificationContent.innerHTML = notifications
+                .map(item => `<p class="py-2 border-b">${item}</p>`)
+                .join("");
+
+            notificationDot.classList.remove("hidden");
+
+        }
+
+    });
+
+    document.addEventListener("click", function (e) {
+
+        if (
+            !notificationBtn.contains(e.target) &&
+            !notificationBox.contains(e.target)
+        ) {
+            notificationBox.classList.add("hidden");
+        }
+
+    });
+
+}
