@@ -1,12 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
+    <title>Settings</title>
+
+    <!-- Tailwind CSS (CDN, matches dashboard's utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (matches dashboard sidebar icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    
+
+<body class="bg-gray-100">
+
+    <!-- ============ SIDEBAR (matches dashboard.html design) ============ -->
+    <aside class="fixed left-0 top-0 w-64 h-screen bg-white shadow-lg flex flex-col justify-between"
+        style="font-family:'Poppins',sans-serif; z-index:40;">
+
+        <div>
+            <!-- Logo -->
+            <div class="flex items-center gap-4 px-6 py-6">
+                <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-white text-xl">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg">Budget</h1>
+                    <h1 class="font-bold text-lg">Tracker</h1>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mt-5 space-y-2">
+                <a href="dashboard.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+                <a href="add-expense.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-circle-minus"></i>
+                    Add Expense
+                </a>
+                <a href="add-income.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-square-plus"></i>
+                    Add Income
+                </a>
+                <a href="transaction.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-file-lines"></i>
+                    Transactions
+                </a>
+                <a href="reports.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-chart-column"></i>
+                    Reports
+                </a>
+                <a href="categories.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl bg-purple-100 text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Categories
+                </a>
+                <a href="savings.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                    Savings
+                </a>
+                <a href="settings.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+                <a href="about.html"
+                    class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About
+                </a>
+            </nav>
+        </div>
+
+        <!-- Bottom Card -->
+        <div class="m-5 bg-purple-50 rounded-3xl p-6">
+            <div class="flex justify-center">
+                <div class="w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center text-white text-3xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+            </div>
+            <h2 class="font-semibold text-center mt-5">Your data is safe</h2>
+            <p class="text-center text-gray-500 text-sm mt-3 leading-6">
+                We value your privacy and keep your financial data secure.
+            </p>
+        </div>
+    </aside>
+    <main class="lg:ml-64 p-6">
+
+        <!-- Heading -->
+        <h1 class="text-4xl font-bold text-gray-800">Settings</h1>
+        <p class="text-gray-500 mt-2">Manage your preferences and account settings</p>
+
+        <!-- Tabs -->
+        <div class="flex gap-5 mt-8 mr-2 border-b font-medium text-gray-600 ">
+            <button class="pb-3 border-b-2 border-purple-600 text-purple-600">General</button>
+            <button class="pb-3 hover:text-purple-600">Budget</button>
+            <button class="pb-3 hover:text-purple-600">Notifications</button>
+            <button class="pb-3 hover:text-purple-600">Backup & Restore</button>
+            <button class="pb-3 hover:text-purple-600">Account</button>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid lg:grid-cols-3 gap-6 mt-8">
+
+            <!-- Left Side -->
+            <div class="lg:col-span-2">
+
+                <div class="bg-white rounded-xl shadow border">
+
+                    <!-- Profile -->
+                    <div class="flex justify-between items-center p-6 border-b">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl">
+                                👤
+                            </div>
+
+                            <div>
+                                <h2 class="font-semibold text-lg">Profile Information</h2>
+                                <p class="text-gray-500">Update your name and basic information.</p>
+                            </div>
+                        </div>
+
+                        <button
+                            class="border border-purple-500 text-purple-600 px-6 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition">
+                            Edit Profile
+                        </button>
+
+                    </div>
+
+                    <!-- Currency -->
+                    <div class="flex justify-between items-center p-6 border-b">
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center">
+                                ₹
+                            </div>
+
+                            <div>
+                                <h2 class="font-semibold">Currency</h2>
+                                <p class="text-gray-500">Select your preferred currency.</p>
+                            </div>
+
+                        </div>
+
+                        <select class="border rounded-lg px-4 py-2 w-64">
+                            <option>Indian Rupee (₹)</option>
+                            <option>US Dollar ($)</option>
+                            <option>Euro (€)</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Date -->
+
+                    <div class="flex justify-between items-center p-6 border-b">
+
+                        <div class="flex items-center gap-4">
+
+                            <div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center">
+                                📅</div>
+
+                            <div>
+                                <h2 class="font-semibold"> Date Format</h2>
+                                <p class="text-gray-500">Choose your preferred date format.</p>
+                            </div>
+
+                        </div>
+
+                        <select class="border rounded-lg px-4 py-2 w-64">
+                            <option>DD MMM YYYY</option>
+                            <option>MM/DD/YYYY</option>
+                            <option>YYYY-MM-DD</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Theme -->
+
+                    <div class="flex justify-between items-center p-6 border-b">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center">
+                                💡
+                            </div>
+
+                            <div>
+                                <h2 class="font-semibold">Theme</h2>
+
+                                <p class="text-gray-500">Choose your preferred theme.</p>
+                            </div>
+
+                        </div>
+
+                        <select class="border rounded-lg px-4 py-2 w-64">
+                            <option>Light</option>
+                            <option>Dark</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Language -->
+
+                    <div class="flex justify-between items-center p-6 border-b">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center">
+                                🌐
+                            </div>
+
+                            <div>
+                                <h2 class="font-semibold">Language</h2>
+
+                                <p class="text-gray-500">Select your preferred language.</p>
+                            </div>
+
+                        </div>
+
+                        <select class="border rounded-lg px-4 py-2 w-64">
+                            <option>English</option>
+                            <option>Franch</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="flex justify-between items-center p-6">
+
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center">
+                                🔒
+                            </div>
+
+                            <div>
+                                <h2 class="font-semibold">Change Password </h2>
+                                <p class="text-gray-500">Update your account password. </p>
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="border border-purple-500 text-purple-600 px-6 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition">
+                            Change Password
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- summary Sec-->
+            <div>
+
+                <div class="bg-white rounded-xl shadow border p-6">
+
+                    <h2 class="text-2xl font-bold mb-5">Preferences Summary</h2>
+
+                    <div class="space-y-5">
+
+                        <div class="flex justify-between">
+                            <span>Currency</span>
+                            <span class="font-semibold">Indian Rupee (₹)</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Date Format</span>
+                            <span class="font-semibold">DD MMM YYYY</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Theme</span>
+                            <span class="font-semibold">Light</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Language</span>
+                            <span class="font-semibold">English</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+    </main>
+
 </body>
+
 </html>
