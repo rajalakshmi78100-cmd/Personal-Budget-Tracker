@@ -24,13 +24,23 @@
 <body class="bg-gray-100">
 
     <div class="flex min-h-screen">
+        
 
-        <!-- ================= Sidebar ================= -->
+                <!-- ================= Sidebar ================= -->
 
-        <aside class="fixed left-0 top-0 w-64 h-screen bg-white shadow-lg flex flex-col justify-between">
+        <aside id="sidebar" class="fixed top-0 left-0 z-50 w-64 h-screen bg-white shadow-lg
+transform -translate-x-full lg:translate-x-0
+transition-transform duration-300
+flex flex-col justify-between">
 
             <!-- Top -->
+            <div class="flex justify-end lg:hidden p-4">
 
+                <button id="close-btn" class="text-2xl text-gray-700">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
             <div>
 
                 <!-- Logo -->
@@ -59,154 +69,165 @@
 
                 <!-- Navigation -->
 
-                <nav class="mt-5 space-y-2">
+                <div class="flex-1 overflow-y-auto">
+                    <nav class="mt-5 space-y-2 pb-6">
 
-                    <a href="dashboard.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounCded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="dashboard.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-house"></i>
-                        Dashboard
+                            <i class="fa-solid fa-house"></i>
+                            Dashboard
 
-                    </a>
+                        </a>
 
-                    <a href="add-expense.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="add-expense.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-circle-minus"></i>
-                        Add Expense
+                            <i class="fa-solid fa-circle-minus"></i>
+                            Add Expense
 
-                    </a>
+                        </a>
 
-                    <a href="add-income.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="add-income.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-square-plus"></i>
-                        Add Income
+                            <i class="fa-solid fa-square-plus"></i>
+                            Add Income
 
-                    </a>
+                        </a>
 
-                    <a href="transaction.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="transaction.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-file-lines"></i>
-                        Transactions
+                            <i class="fa-solid fa-file-lines"></i>
+                            Transactions
 
-                    </a>
+                        </a>
 
-                    <a href="reports.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="reports.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-chart-column"></i>
-                        Reports
+                            <i class="fa-solid fa-chart-column"></i>
+                            Reports
 
-                    </a>
+                        </a>
 
-                    <a href="categories.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="categories.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-layer-group"></i>
-                        Categories
+                            <i class="fa-solid fa-layer-group"></i>
+                            Categories
 
-                    </a>
+                        </a>
 
-                    <a href="savings.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="savings.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-piggy-bank"></i>
-                        Savings
+                            <i class="fa-solid fa-piggy-bank"></i>
+                            Savings
 
-                    </a>
+                        </a>
 
-                    <a href="settings.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="settings.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
 
-                    </a>
+                        </a>
 
-                    <a href="about.html"
-                        class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
+                        <a href="about.html"
+                            class="menu-item flex items-center gap-4 mx-4 px-5 py-3 rounded-xl hover:bg-purple-100 hover:text-purple-700 transition duration-300">
 
-                        <i class="fa-solid fa-circle-info"></i>
-                        About
+                            <i class="fa-solid fa-circle-info"></i>
+                            About
 
-                    </a>
+                        </a>
 
-                </nav>
+                    </nav>
+                </div>
 
-            </div>
+                <!-- Bottom Card -->
 
-            <!-- Bottom Card -->
+                <div class="m-5 bg-purple-50 rounded-3xl p-6">
 
-            <div class="m-5 bg-purple-50 rounded-3xl p-6">
+                    <div class="flex justify-center">
 
-                <div class="flex justify-center">
+                        <div
+                            class="w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center text-white text-3xl">
 
-                    <div
-                        class="w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center text-white text-3xl">
+                            <i class="fa-solid fa-shield-halved"></i>
 
-                        <i class="fa-solid fa-shield-halved"></i>
+                        </div>
 
                     </div>
 
+                    <h2 class="font-semibold text-center mt-5">
+
+                        Your data is safe
+
+                    </h2>
+
+                    <p class="text-center text-gray-500 text-sm mt-3 leading-6">
+
+                        We value your privacy and keep your financial data secure.
+
+                    </p>
+
                 </div>
-
-                <h2 class="font-semibold text-center mt-5">
-
-                    Your data is safe
-
-                </h2>
-
-                <p class="text-center text-gray-500 text-sm mt-3 leading-6">
-
-                    We value your privacy and keep your financial data secure.
-
-                </p>
-
-            </div>
+               
 
         </aside>
+        <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden">
+        </div>
 
 
         <!-- ================= Main ================= -->
 
-        <main class="ml-64 flex-1 p-8 bg-gray-100">
+        <main class="flex-1 lg:ml-64 p-4 md:p-6 lg:p-8 bg-gray-100">
 
             <!-- Header -->
-
             <div class="flex items-center justify-between mb-6">
 
-                <!-- Left side: Dashboard title -->
-                <div>
-                    <h1 class="text-3xl font-bold">
-                        Dashboard
-                    </h1>
-                    <p class="text-gray-500">
-                        Track your money overview
-                    </p>
+                <!-- Left Side -->
+                <div class="flex items-center gap-4">
+
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="lg:hidden text-purple-600 text-3xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- Title -->
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold">
+                            Add Income
+                        </h1>
+                        <p class="text-gray-500">
+                            Track your income
+                        </p>
+                    </div>
+
                 </div>
 
+                <!-- Right Side -->
+                <div class="flex items-center gap-3">
 
-                <!-- Right side: Month dropdown + Notification + Profile -->
-                <div class="flex items-center gap-5">
-
-                    <select class="border border-gray-300 rounded-2xl px-5 py-3 bg-white shadow-sm font-medium">
+                    <!-- Month -->
+                    <select class="border border-gray-300 rounded-2xl px-4 py-3 bg-white shadow-sm font-medium">
                         <option>This Month</option>
                         <option>Last Month</option>
                         <option>This Year</option>
                     </select>
-
-
+                    <!-- Notification -->
                     <div class="relative">
 
                         <button id="notificationBtn"
-                            class="relative w-14 h-14 bg-white rounded-full shadow-md flex items-center justify-center">
+                            class="relative w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center">
 
-                            <i class="fa-solid fa-bell text-gray-600 text-xl"></i>
+                            <i class="fa-solid fa-bell text-gray-600"></i>
 
                             <span id="notificationDot"
-                                class="absolute top-2 right-2 w-3 h-3 bg-red-500 rounded-full border-2 border-white">
+                                class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white">
                             </span>
 
                         </button>
@@ -227,13 +248,10 @@
 
                     </div>
 
-
-                    <div class="w-14 h-14 rounded-full bg-purple-600 
-        flex items-center justify-center 
-        text-white text-xl font-semibold">
-
+                    <!-- Profile -->
+                    <div
+                        class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-white font-semibold">
                         S
-
                     </div>
 
                 </div>

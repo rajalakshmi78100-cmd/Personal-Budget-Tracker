@@ -344,3 +344,30 @@ if (notificationBtn) {
     });
 
 }
+// ======================================
+// MOBILE SIDEBAR MENU
+// ======================================
+
+const menuBtn = document.getElementById("menu-btn");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("close-btn");
+
+if (menuBtn && sidebar && overlay) {
+
+    menuBtn.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+    });
+
+    function closeSidebar() {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeSidebar);
+    }
+
+    overlay.addEventListener("click", closeSidebar);
+}
