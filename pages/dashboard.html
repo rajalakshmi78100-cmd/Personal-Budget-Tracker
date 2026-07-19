@@ -31,14 +31,23 @@
 
 <body>
 
-    <div class="flex min-h-screen">
 
         <!-- ================= Sidebar ================= -->
 
-        <aside class="fixed left-0 top-0 w-64 h-screen bg-white shadow-lg flex flex-col justify-between">
+        <aside id="sidebar"
+class="fixed top-0 left-0 z-50 w-64 h-screen bg-white shadow-lg
+transform -translate-x-full lg:translate-x-0
+transition-transform duration-300
+flex flex-col justify-between">
 
             <!-- Top -->
+<div class="flex justify-end lg:hidden p-4">
 
+    <button id="close-btn" class="text-2xl text-gray-700">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
             <div>
 
                 <!-- Logo -->
@@ -174,12 +183,29 @@
             </div>
 
         </aside>
+        <div id="overlay"
+class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden">
+</div>
+        
 
         <!-- ================= Main Content ================= -->
 
-        <main class="ml-64 flex-1 p-8">
+      <main class="lg:ml-64 p-6 min-h-screen">
 
             <!-- Header and Dashboard Cards -->
+
+            <!-- Mobile Menu Button -->
+<div class="flex items-center justify-between lg:hidden mb-6">
+
+    <button id="menu-btn" class="text-2xl text-purple-600">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <h1 class="text-2xl font-bold">
+        Budget Tracker
+    </h1>
+
+</div>
             <!-- ================= Header ================= -->
 
             <div class="flex justify-between items-center">
@@ -791,7 +817,6 @@
             </div>
         </main>
 
-    </div>
 
     <script src="../js/dashboard.js"></script>
 
